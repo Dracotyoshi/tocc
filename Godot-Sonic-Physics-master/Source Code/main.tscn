@@ -324,8 +324,8 @@ position = Vector2( 0, -4 )
 
 [node name="Sonic" type="Sprite" parent="Player/Characters"]
 texture = ExtResource( 9 )
-vframes = 17
 hframes = 17
+vframes = 17
 region_rect = Rect2( 0, 0, 48, 48 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player/Characters/Sonic"]
@@ -759,4 +759,5 @@ polygon = PoolVector2Array( -64, 64, -61, 38, -55, 16, -42, -8, -28, -25, -8, -4
 [node name="StageMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 31 )
 autoplay = true
+
 [connection signal="animation_finished" from="Player/Characters/Sonic/AnimationPlayer" to="Player/StateMachine" method="_on_AnimationPlayer_animation_finished"]
