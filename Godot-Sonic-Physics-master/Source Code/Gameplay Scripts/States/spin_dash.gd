@@ -7,7 +7,7 @@ func enter(host):
 	host.player_vfx.play('ChargeDust', false)
 	host.audio_player.play('spin_dash_charge')
 
-func step(host, delta):
+func step(host, _delta):
 	if Input.is_action_just_released("ui_down"):
 		return 'OnGround'
 	
@@ -26,5 +26,5 @@ func exit(host):
 	host.audio_player.stop('spin_dash_charge')
 	host.audio_player.play('spin_dash_release')
 
-func animation_step(host, animator):
+func animation_step(_host, animator):
 	animator.animate('SpinDashCharge', 1.0, false)

@@ -52,7 +52,7 @@ func vertical_border(player : PlayerPhysics):
 
 func vertical_scrolling(player : PlayerPhysics, delta : float):
 	var scroll_back = true
-	var scroll_world = camera_scroll.global_position
+	#var scroll_world = camera_scroll.global_position
 	
 	if player.is_looking_up:
 		if can_scroll(delta):

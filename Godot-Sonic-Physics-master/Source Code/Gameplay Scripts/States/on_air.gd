@@ -15,7 +15,7 @@ func enter(host):
 	host.is_rolling = false
 	roll_jump = has_jumped and has_rolled
 
-func step(host, delta):
+func step(host, _delta):
 	if host.is_grounded:
 		host.ground_reacquisition()
 		return 'OnGround'
@@ -49,7 +49,7 @@ func step(host, delta):
 	host.velocity.x = 0 if host.is_wall_left and host.velocity.x < 0 else host.velocity.x
 	host.velocity.x = 0 if host.is_wall_right and host.velocity.x > 0 else host.velocity.x
 
-func exit(host):
+func exit(_host):
 	pass
 
 func animation_step(host, animator):

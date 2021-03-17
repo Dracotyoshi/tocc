@@ -2,7 +2,7 @@ extends Node2D
 
 class_name AudioPlayer
 
-onready var audios = {
+onready var audios: Dictionary = {
 	'jump' : $jump,
 	'brake' : $brake,
 	'spin' : $spin,

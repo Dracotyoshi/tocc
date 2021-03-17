@@ -1,6 +1,6 @@
 extends Node
 
-onready var states = {
+onready var states: Dictionary = {
 	'OnGround' : $OnGround,
 	'OnAir' : $OnAir,
 	'SpinDash' : $SpinDash,

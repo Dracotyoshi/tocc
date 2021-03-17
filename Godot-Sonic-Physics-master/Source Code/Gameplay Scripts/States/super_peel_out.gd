@@ -11,7 +11,7 @@ func enter(host: PlayerPhysics):
 	animation_speed = 1.0
 	host.audio_player.play('peel_out_charge')
 
-func step(host: PlayerPhysics, delta):
+func step(_host: PlayerPhysics, delta):
 	charge_timer -= delta
 	animation_speed += (720.0 / pow(CHARGE_TIME, 2.0)) * delta
 	animation_speed = min(animation_speed, 720.0)
@@ -26,7 +26,7 @@ func exit(host: PlayerPhysics):
 	else:
 		host.audio_player.stop('peel_out_charge')
 
-func animation_step(host: PlayerPhysics, animator: CharacterAnimator):
+func animation_step(_host: PlayerPhysics, animator: CharacterAnimator):
 	var anim_speed = max(-(8.0 / 60.0 - (animation_speed / 120.0)), 1.0)
 	var anim_name = 'Walking'
 	

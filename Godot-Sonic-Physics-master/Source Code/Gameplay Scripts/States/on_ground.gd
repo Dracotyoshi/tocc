@@ -5,10 +5,10 @@ var is_braking : bool
 var idle_anim = 'Idle1'
 var brake_sign : int
 
-func enter(host):
+func enter(_host):
 	idle_anim = 'Idle1'
 
-func step(host, delta):
+func step(host, _delta):
 	host.is_looking_down = false
 	host.is_looking_up = false
 	host.is_pushing = false
@@ -52,7 +52,7 @@ func step(host, delta):
 			
 			if host.gsp > 270 and !host.is_rolling and host.ground_mode == 0:
 				if !is_braking:
-					brake_sign = sign(host.gsp)
+					brake_sign = int(sign(host.gsp))
 					host.audio_player.play('brake')
 				is_braking = true
 		elif host.gsp > -host.TOP and !host.is_rolling:
@@ -66,7 +66,7 @@ func step(host, delta):
 			
 			if host.gsp < -270 and !host.is_rolling and host.ground_mode == 0:
 				if !is_braking:
-					brake_sign = sign(host.gsp)
+					brake_sign = int(sign(host.gsp))
 					host.audio_player.play('brake')
 				is_braking = true
 		elif host.gsp < host.TOP and !host.is_rolling:

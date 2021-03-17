@@ -7,7 +7,7 @@ onready var vfx = {
 
 var effect_to_stop
 
-func _process(delta):
+func _process(_delta):
 	if effect_to_stop != null:
 		if !vfx[effect_to_stop].is_playing():
 			stop(effect_to_stop)
