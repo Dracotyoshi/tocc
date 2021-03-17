@@ -291,7 +291,7 @@ position = Vector2( 0, -4 )
 texture = ExtResource( 11 )
 hframes = 17
 vframes = 17
-frame = 38
+frame = 55
 region_rect = Rect2( 0, 0, 48, 48 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Characters/Sonic"]

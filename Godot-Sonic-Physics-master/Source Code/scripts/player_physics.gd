@@ -27,12 +27,12 @@ onready var character: Node2D = $Characters
 onready var animation: AnimationPlayer = $Characters/Sonic/AnimationPlayer
 onready var audio_player: Node2D = $AudioPlayer
 
+const CONTROL_UNLOCK_TIME: float = 0.5
+var control_unlock_timer : float = 0.0
 var gsp : float
 var velocity : Vector2
 var ground_mode : int
 var control_locked : bool
-var control_unlock_time: float = 0.5
-var control_unlock_timer : float
 var can_fall : bool
 var is_ray_colliding : bool
 var is_grounded : bool
@@ -48,7 +48,7 @@ var is_looking_down : bool
 var is_looking_up : bool
 
 func _ready() -> void:
-	control_unlock_timer = control_unlock_time
+	control_unlock_timer = CONTROL_UNLOCK_TIME
 
 func _process(delta: float) -> void:
 	var roll_anim: bool = animation.current_animation == 'Rolling'
@@ -56,10 +56,10 @@ func _process(delta: float) -> void:
 	low_collider.disabled = !roll_anim
 	left_ground.position.x = -9 if !roll_anim else -7
 	right_ground.position.x = 9 if !roll_anim else 7
-	if (control_locked and is_grounded) or control_unlock_timer < control_unlock_time:
+	if (control_locked and is_grounded) or control_unlock_timer < CONTROL_UNLOCK_TIME:
 		control_unlock_timer -= delta
 		if control_unlock_timer <= 0:
-			control_unlock_timer = control_unlock_time
+			control_unlock_timer = CONTROL_UNLOCK_TIME
 			control_locked = false
 
 func physics_step() -> void:
@@ -122,7 +122,7 @@ func is_on_ground() -> bool:
 			return position.y + 20 > point.y and velocity.y >= 0
 	return false
 
-func get_ground_ray():
+func get_ground_ray() -> RayCast2D:
 	can_fall = true
 	if !left_ground.is_colliding() and !right_ground.is_colliding():
 		return null
@@ -131,8 +131,8 @@ func get_ground_ray():
 	elif !right_ground.is_colliding() and left_ground.is_colliding():
 		return left_ground
 	can_fall = false
-	var left_point : float
-	var right_point : float
+	var left_point: float
+	var right_point: float
 	match ground_mode:
 		0:
 			left_point = -left_ground.get_collision_point().y

@@ -1,13 +1,13 @@
 extends Node
 
+onready var host: PlayerPhysics = get_parent()
 onready var states: Dictionary = {
 	'OnGround' : $OnGround,
 	'OnAir' : $OnAir,
 	'SpinDash' : $SpinDash,
 	'SuperPeelOut' : $SuperPeelOut,
-}
+	}
 
-onready var host: PlayerPhysics = get_parent()
 var current_state: String = 'OnGround'
 var previous_state: String = ""
 
