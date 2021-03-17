@@ -12,22 +12,22 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "AudioPlayer",
 "language": "GDScript",
-"path": "res://Gameplay Scripts/audio_player.gd"
+"path": "res://scripts/audio_player.gd"
 }, {
 "base": "AnimationPlayer",
 "class": "CharacterAnimator",
 "language": "GDScript",
-"path": "res://Gameplay Scripts/character_animator.gd"
+"path": "res://scripts/character_animator.gd"
 }, {
 "base": "Node2D",
 "class": "PlayerCamera",
 "language": "GDScript",
-"path": "res://Gameplay Scripts/player_camera.gd"
+"path": "res://scripts/player_camera.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "PlayerPhysics",
 "language": "GDScript",
-"path": "res://Gameplay Scripts/player_physics.gd"
+"path": "res://scripts/player_physics.gd"
 } ]
 _global_script_class_icons={
 "AudioPlayer": "",
@@ -39,9 +39,9 @@ _global_script_class_icons={
 [application]
 
 config/name="Godot Sonic Physics"
-run/main_scene="res://main.tscn"
+run/main_scene="res://scenes/main.tscn"
 boot_splash/fullsize=false
-config/icon="res://icon.png"
+config/icon="res://imports/icon.png"
 
 [debug]
 
@@ -99,4 +99,4 @@ ui_full_screen={
 
 quality/intended_usage/framebuffer_allocation=0
 quality/intended_usage/framebuffer_allocation.mobile=0
-environment/default_environment="res://default_env.tres"
+environment/default_environment="res://resources/defaults/default_env.tres"

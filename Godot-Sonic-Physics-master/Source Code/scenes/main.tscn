@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/main.gd" type="Script" id=1]
+[ext_resource path="res://scenes/PlayerCamera.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Levels/LevelTest.tscn" type="PackedScene" id=4]
+[ext_resource path="res://imports/musics/sky_sanctuary_zone.ogg" type="AudioStream" id=31]
+
+[node name="main" type="Node"]
+script = ExtResource( 1 )
+
+[node name="PlayerCamera" parent="." instance=ExtResource( 2 )]
+position = Vector2( 212, 123 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 30.7244, 313.071 )
+
+[node name="LevelTest" parent="." instance=ExtResource( 4 )]
+
+[node name="StageMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 31 )
+autoplay = true
