@@ -6,7 +6,7 @@ var roll_jump : bool
 var can_attack : bool
 var override_anim : String
 
-func enter(host):
+func enter(host) -> void:
 	has_jumped = host.has_jumped
 	has_rolled = host.is_rolling
 	can_attack = has_jumped
@@ -14,7 +14,7 @@ func enter(host):
 	host.is_rolling = false
 	roll_jump = has_jumped and has_rolled
 
-func step(host, _delta):
+func step(host: PlayerPhysics, _delta: float):
 	if host.is_grounded:
 		host.ground_reacquisition()
 		return 'OnGround'
@@ -38,8 +38,10 @@ func step(host, _delta):
 	if Input.is_action_just_released("ui_accept"): # has jumped
 			if host.velocity.y < -240.0: # set min jump height
 				host.velocity.y = -240.0
-	host.velocity.x = 0 if host.is_wall_left and host.velocity.x < 0 else host.velocity.x
-	host.velocity.x = 0 if host.is_wall_right and host.velocity.x > 0 else host.velocity.x
+	if host.is_wall_left and host.velocity.x < 0:
+		host.velocity.x = 0
+	if host.is_wall_right and host.velocity.x > 0:
+		host.velocity.x = 0
 
 func exit(_host):
 	pass
