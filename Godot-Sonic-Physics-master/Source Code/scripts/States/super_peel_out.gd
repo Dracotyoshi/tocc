@@ -10,7 +10,7 @@ func enter(host: PlayerPhysics):
 	animation_speed = 1.0
 	host.audio_player.play('peel_out_charge')
 
-func step(_host: PlayerPhysics, delta):
+func step(_host: PlayerPhysics, delta: float):
 	charge_timer -= delta
 	animation_speed += (720.0 / pow(CHARGE_TIME, 2.0)) * delta
 	animation_speed = min(animation_speed, 720.0)

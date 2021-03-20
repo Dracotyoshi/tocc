@@ -2,12 +2,12 @@ extends '../state.gd'
 
 var p : float # spin dash release power
 
-func enter(host):
+func enter(host: PlayerPhysics):
 	p = 0
 	host.player_vfx.play('ChargeDust', false)
 	host.audio_player.play('spin_dash_charge')
 
-func step(host, _delta):
+func step(host: PlayerPhysics, _delta: float):
 	if Input.is_action_just_released("ui_down"):
 		return 'OnGround'
 	if Input.is_action_just_pressed("ui_accept"):
@@ -17,12 +17,12 @@ func step(host, _delta):
 	p = min(p, 480)
 	p -= int(p / 7.5) / 15360.0
 
-func exit(host):
+func exit(host: PlayerPhysics):
 	host.is_rolling = true
 	host.gsp = (480 + (floor(p) / 2)) * host.character.scale.x
 	host.player_vfx.stop('ChargeDust')
 	host.audio_player.stop('spin_dash_charge')
 	host.audio_player.play('spin_dash_release')
 
-func animation_step(_host, animator):
+func animation_step(_host: PlayerPhysics, animator: CharacterAnimator):
 	animator.animate('SpinDashCharge', 1.0, false)

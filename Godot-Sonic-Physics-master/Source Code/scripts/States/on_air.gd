@@ -6,7 +6,7 @@ var roll_jump : bool
 var can_attack : bool
 var override_anim : String
 
-func enter(host) -> void:
+func enter(host: PlayerPhysics) -> void:
 	has_jumped = host.has_jumped
 	has_rolled = host.is_rolling
 	can_attack = has_jumped
@@ -43,11 +43,11 @@ func step(host: PlayerPhysics, _delta: float):
 	if host.is_wall_right and host.velocity.x > 0:
 		host.velocity.x = 0
 
-func exit(_host):
+func exit(_host: PlayerPhysics) -> void:
 	pass
 
-func animation_step(host, animator):
-	var anim_name = animator.current_animation
+func animation_step(host: PlayerPhysics, animator: CharacterAnimator):
+	var anim_name: String = animator.current_animation
 	var anim_speed = animator.get_playing_speed()
 	if anim_name == 'Braking':
 		anim_name = 'Walking'

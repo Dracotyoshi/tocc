@@ -5,10 +5,10 @@ var is_braking : bool
 var idle_anim: String = 'Idle1'
 var brake_sign : int
 
-func enter(_host):
+func enter(_host: PlayerPhysics):
 	idle_anim = 'Idle1'
 
-func step(host, _delta):
+func step(host: PlayerPhysics, _delta: float):
 	host.is_looking_down = false
 	host.is_looking_up = false
 	host.is_pushing = false
@@ -89,11 +89,11 @@ func step(host, _delta):
 	if !host.can_fall:
 		host.snap_to_ground()
 
-func exit(host):
+func exit(host: PlayerPhysics):
 	is_braking = false
 	host.is_braking = false
 
-func animation_step(host, animator):
+func animation_step(host: PlayerPhysics, animator: CharacterAnimator):
 	var anim_name = idle_anim
 	var anim_speed = 1.0
 	var abs_gsp = abs(host.gsp)
@@ -131,7 +131,7 @@ func animation_step(host, animator):
 			anim_name = 'Pushing'
 	animator.animate(anim_name, anim_speed, play_once)
 
-func _on_animation_finished(anim_name):
+func _on_animation_finished(anim_name: String):
 	if anim_name == 'Braking':
 		is_braking = false
 	elif anim_name == 'Idle1':

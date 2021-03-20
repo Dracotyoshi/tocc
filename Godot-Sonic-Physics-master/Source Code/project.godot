@@ -9,11 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node2D",
-"class": "AudioPlayer",
-"language": "GDScript",
-"path": "res://scripts/audio_player.gd"
-}, {
 "base": "AnimationPlayer",
 "class": "CharacterAnimator",
 "language": "GDScript",
@@ -30,7 +25,6 @@ _global_script_classes=[ {
 "path": "res://scripts/player_physics.gd"
 } ]
 _global_script_class_icons={
-"AudioPlayer": "",
 "CharacterAnimator": "",
 "PlayerCamera": "",
 "PlayerPhysics": ""
