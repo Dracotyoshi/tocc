@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sky_sanctuary_zone.ogg-eefdc0d87549f8837ab77ab8821489a4.oggstr"
+
+[deps]
+
+source_file="res://Imports/Musics/sky_sanctuary_zone.ogg"
+dest_files=[ "res://.import/sky_sanctuary_zone.ogg-eefdc0d87549f8837ab77ab8821489a4.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

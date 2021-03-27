@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/peelOutRelease.wav-82c76d80f109b640a89856688d7801a3.sample"
+
+[deps]
+
+source_file="res://Imports/SFX/peelOutRelease.wav"
+dest_files=[ "res://.import/peelOutRelease.wav-82c76d80f109b640a89856688d7801a3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

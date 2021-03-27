@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/spinDashRelease.wav-e9806f4543957ae8374c05ab77528522.sample"
+
+[deps]
+
+source_file="res://Imports/SFX/spinDashRelease.wav"
+dest_files=[ "res://.import/spinDashRelease.wav-e9806f4543957ae8374c05ab77528522.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
